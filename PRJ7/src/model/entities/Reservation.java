@@ -4,13 +4,19 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
+import model.exceptions.ReservationException;
+
 public class Reservation {
     private Integer roomNumber;
     private LocalDate checkIn;
     private LocalDate checkOut;
     private static DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-    public Reservation(Integer roomNumber, LocalDate checkIn, LocalDate checkOut) {
+    public Reservation(Integer roomNumber) {
+        setRoomNumber(roomNumber);
+    }
+
+    public Reservation(Integer roomNumber, LocalDate checkIn, LocalDate checkOut) throws ReservationException {
         setRoomNumber(roomNumber);
         updateDates(checkIn, checkOut);
     }
@@ -19,15 +25,16 @@ public class Reservation {
         return ChronoUnit.DAYS.between(checkIn, checkOut);
     }
 
-    public void updateDates(LocalDate checkIn, LocalDate checkOut) {
+    public void updateDates(LocalDate checkIn, LocalDate checkOut) throws ReservationException {
         if (!checkOut.isAfter(checkIn)) {
-            System.out.println("Error in reservation: Check-out date must be after check-in date!");
-        } else if (checkIn.isBefore(LocalDate.now())) {
-            System.out.println("Error in reservation: Check-in date must be future dates!");
-        } else {
-            this.checkIn = checkIn;
-            this.checkOut = checkOut;
+            throw new ReservationException("Error in reservation: Check-out date must be after check-in date!");
         }
+        if (checkIn.isBefore(LocalDate.now())) {
+            throw new ReservationException("Error in reservation: Check-in date must be future dates!");
+        }
+
+        this.checkIn = checkIn;
+        this.checkOut = checkOut;
     }
 
     public Integer getRoomNumber() {
