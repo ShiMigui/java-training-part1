@@ -16,7 +16,7 @@
   - **Arquivos**
     - PRJ 9 - [Itens vendidos](#files-itens-vendidos)
   - **Interfaces**
-    - PRJ 10 - [Aluguel de carro](#interface-aluguel-de-carro)
+    - PRJ 10 - [Aluguel de carro](#interface-aluguel-de-carro-1)
 
 ## Links
 
@@ -425,11 +425,11 @@ Iphone X,1800.00
 Samsung Galaxy 9,1700.00
 ```
 
-### Interface Aluguel de carro
+### Interface Aluguel de carro 1
 
 Uma locadora brasileira de carros cobra um valor por hora para as locações de até 12 horas. Porém, se a duração da locação ultrapassar 12 horas, a locação será cobrada com base em um valor diário. Além do valor de locação é acrescido no preço o valor de imposto conforme regras do país que, no caso do Brasil, é 20% para valores até 100.00, ou 15% para valores acima desse. Fazer um programa que lê os dados da locação (modelo do carro, instante inicial e final da locação), bem como o valor por hora e o valor diário de locação. O programa deve então gerar a nota de pagamento (contendo valor da locação, valor do imposto e valor total do pagamento) e informar os dados na tela. Veja os exemplos.
 
-#### Desenho - Interface Aluguel de carro
+#### Entidades - Interface Aluguel de carro 1
 
 |Vehicle|
 |---|
@@ -446,7 +446,19 @@ Uma locadora brasileira de carros cobra um valor por hora para as locações de 
 |tax: Double|
 |totalPayment: Double|
 
-#### Exemplos - Interface Aluguel de carro
+#### Services - Interface Aluguel de carro 1
+
+|RentalServices|
+|---|
+|pricePerHour: Double|
+|pricePerDay: Double|
+|processInvoice(carRental: CarRental): void|
+
+|BrazilTaxService|
+|---|
+|tax(amount: Double): Double|
+
+#### Exemplos - Interface Aluguel de carro 1
 
 ```shell
 Enter rental data
