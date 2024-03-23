@@ -1,7 +1,9 @@
 package model.services.tax;
 
-public class BrazilTaxService {
+import model.interfaces.TaxService;
+
+public class BrazilTaxService implements TaxService {
 	public double tax(double amount) {
-		return (amount>100)? amount * .15: amount * .2;
+		return (amount > 100) ? amount * .15 : amount * .2;
 	}
 }

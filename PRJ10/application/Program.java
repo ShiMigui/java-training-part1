@@ -44,12 +44,11 @@ public class Program {
 			service.processInvoice(rental);
 
 			System.out.println("\nINVOICE");
-			System.out.println("Basic payment: $" + String.format("%.2f", rental.getInvoice().getBasicPayment()));
-			System.out.println("Basic payment: $" + String.format("%.2f", rental.getInvoice().getTax()));
-			System.out.println("Basic payment: $" + String.format("%.2f", rental.getInvoice().getTotalPayment()));
+			System.out.printf("Basic payment: $%.2f%n", rental.getInvoice().getBasicPayment());
+			System.out.printf("Tax: $%.2f%n", rental.getInvoice().getTax());
+			System.out.printf("Total: $%.2f%n", rental.getInvoice().getTotalPayment());
 		} catch (RuntimeException e) {
 			System.out.println("Unexpected error: " + e.getMessage());
 		}
-
 	}
 }
