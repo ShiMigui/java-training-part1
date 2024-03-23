@@ -29,3 +29,4 @@ replay_pid*
 */.project
 */.classpath
 */.vscode/
+*/docs/design-system/.*
