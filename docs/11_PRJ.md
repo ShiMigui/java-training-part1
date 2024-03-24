@@ -1,6 +1,6 @@
 # Parcelas contratos
 
-![Project design system, desenho UML contendo as classes de interface, entidade e serviços usadas no projeto](design-system/PRJ11.png)
+![Project design system, desenho UML contendo as classes de interface, entidade e serviços usadas no projeto](design-system/11_PRJ.png)
 
 Uma empresa deseja automatizar o processamento dos contratos. O processamento consiste em gerar as parcelas a serem pagas para aquele contrato, com base no número de meses desejados.
 
