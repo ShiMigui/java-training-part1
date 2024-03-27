@@ -15,6 +15,7 @@
   - PRJ 9 - [Itens vendidos](docs/9_PRJ.md)
   - PRJ 10 - [Aluguel de carro](docs/10_PRJ.md)
   - PRJ 11 - [Parcelas contrato](docs/11_PRJ.md)
+  - PRJ 12 - [Alunos do curso](docs/12_PRJ.md)
 
 ## Links
 
