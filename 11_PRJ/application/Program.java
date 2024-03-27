@@ -35,10 +35,10 @@ public class Program {
 			cp.process(c, sc.nextInt());
 
 			
-			System.out.println("\nCONTRACT: " + c.getNumber() + " - " + fmt.format(c.getDate()) + " - Total: $" + String.format("%.2f", c.getTotal()));
+			System.out.println("\nCONTRACT: " + c);
 			System.out.println("INSTALLMENTS");
 			for (Installment i : c.getInstallments()) {
-				System.out.println(fmt.format(i.getDate()) + " - $" + String.format("%.2f", i.getAmount()));
+				System.out.println(i);
 			}
 		} catch (Exception e) {
 			System.out.println("Unexpected error: " + e.getMessage());

@@ -1,6 +1,7 @@
 package model.entities;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +9,8 @@ public class Contract {
 	private Integer number;
 	private LocalDate date;
 	private Double total;
+	
+	private DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 	
 	private List<Installment> installments = new ArrayList<>();
 
@@ -39,6 +42,11 @@ public class Contract {
 	
 	public List<Installment> getInstallments() {
 		return installments;
+	}
+	
+	@Override
+	public String toString() {
+		return number + " - " + date.format(fmt) + " - $" + String.format("%.2f", total);
 	}
 
 }

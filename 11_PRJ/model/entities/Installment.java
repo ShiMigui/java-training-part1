@@ -6,6 +6,8 @@ import java.time.format.DateTimeFormatter;
 public class Installment {
 	private LocalDate date;
 	private Double amount;
+	
+	private DateTimeFormatter fmt =  DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
 	public Installment(LocalDate date, Double amount) {
 		this.date = date;
@@ -22,5 +24,10 @@ public class Installment {
 
 	public Double getAmount() {
 		return amount;
+	}
+	
+	@Override
+	public String toString() {
+		return date.format(fmt) + " - $" + String.format("%.2f", amount);
 	}
 }

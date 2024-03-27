@@ -1,5 +1,7 @@
 package model.services;
 
+import java.time.LocalDate;
+
 import model.entities.Contract;
 import model.entities.Installment;
 import model.interfaces.PaymentService;
@@ -12,12 +14,15 @@ public class ContractProcessor {
 	}
 
 	public void process(Contract c, int qtMonths) {
-		for (int i = 0; i < qtMonths; i++) {
-			double amount = c.getTotal() / ((double) qtMonths);
-			amount += service.interest(amount, (i + 1));
+		double basic = c.getTotal() / qtMonths;
+		for (int i = 1; i <= qtMonths; i++) {
+			LocalDate date = c.getDate().plusMonths(i);
+			
+			double amount = basic;
+			amount += service.interest(amount, i);
 			amount += service.fee(amount);
 
-			c.addInstallment(new Installment(c.getDate().plusMonths(i + 1), amount));
+			c.addInstallment(new Installment(date, amount));
 		}
 	}
 
