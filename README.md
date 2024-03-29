@@ -1,5 +1,7 @@
 # Curso de Java completo - Projetos para treinamento de java
 
+Esta é a primeira parte do curso de java completo, feito na plataforma Udemy, incluem projetos sobre POO até Set e Map.
+
 ## Índice
 
 - [Links](#links)
