@@ -16,6 +16,7 @@
   - PRJ 10 - [Aluguel de carro](docs/10_PRJ.md)
   - PRJ 11 - [Parcelas contrato](docs/11_PRJ.md)
   - PRJ 12 - [Alunos do curso](docs/12_PRJ.md)
+  - PRJ 13 - [Votos do candidato](docs/13_PRJ.md)
 
 ## Links
 
